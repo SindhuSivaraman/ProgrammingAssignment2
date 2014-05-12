@@ -5,13 +5,13 @@
 ## By default 1 by 1 matrix is created with element "NA" if matrix() is chosen as default. 
 ## To avoid that, a 2 by 2 matrix is taken as default by providing matrix(1:4,2,2)
  
-makeCacheMatrix <- function(matrix = matrix(1:4,2,2)) {
+makeCacheMatrix <- function(mat = matrix(1:4,2,2)) {
     inv_matrix <- NULL
     set <- function(new_matrix) {
-        matrix <<- new_matrix
+        mat <<- new_matrix
         inv_matrix <<- NULL
     }
-    get <- function() matrix
+    get <- function() mat
     setinverse<- function(inverse) inv_matrix <<-inverse
     getinverse <- function() inv_matrix
     list(set = set, get = get,
